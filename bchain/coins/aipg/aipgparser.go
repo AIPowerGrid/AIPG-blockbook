@@ -9,8 +9,8 @@ import (
 
 // magic numbers
 const (
-	MainnetMagic wire.BitcoinNet = 0x4e564152
-	TestnetMagic wire.BitcoinNet = 0x544e5652
+	MainnetMagic wire.BitcoinNet = 0x45344941
+	TestnetMagic wire.BitcoinNet = 0x54344941
 )
 
 // chain parameters
@@ -20,15 +20,18 @@ var (
 )
 
 func init() {
+
+//AIPG mainnet Address enconding magics
 	MainNetParams = chaincfg.MainNetParams
 	MainNetParams.Net = MainnetMagic
-	MainNetParams.PubKeyHashAddrID = []byte{60}
-	MainNetParams.ScriptHashAddrID = []byte{122}
+	MainNetParams.PubKeyHashAddrID = []byte{23}
+	MainNetParams.ScriptHashAddrID = []byte{23}
 
+//AIPG testnet Address encoding magics
 	TestNetParams = chaincfg.TestNet3Params
 	TestNetParams.Net = TestnetMagic
-	TestNetParams.PubKeyHashAddrID = []byte{111}
-	TestNetParams.ScriptHashAddrID = []byte{196}
+	TestNetParams.PubKeyHashAddrID = []byte{23}
+	TestNetParams.ScriptHashAddrID = []byte{23}
 }
 
 // AIPGParser handle
