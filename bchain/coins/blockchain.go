@@ -141,7 +141,8 @@ func init() {
 	BlockChainFactories["BNB Smart Chain Archive"] = bsc.NewBNBSmartChainRPC
 	BlockChainFactories["Polygon"] = polygon.NewPolygonRPC
 	BlockChainFactories["Polygon Archive"] = polygon.NewPolygonRPC
-	BlockChainFactories["AIPG Archive"] = aipg.NewAIPGRPC	
+	BlockChainFactories["AIPG Archive"] = aipg.NewAIPGRPC
+	BlockChainFactories["AIPG Testnet"] = aipg.NewAIPGRPC
 }
 
 // NewBlockChain creates bchain.BlockChain and bchain.Mempool for the coin passed by the parameter coin
