@@ -1,15 +1,15 @@
 [![Go Report Card](https://goreportcard.com/badge/trezor/blockbook)](https://goreportcard.com/report/trezor/blockbook)
 
-# Blockbook
+# AIPG Blockbook
 
-**Blockbook** is a back-end service for Trezor Suite. The main features of **Blockbook** are:
+**AIPG Blockbook** is a back-end service for Trezor Suite. The main features of **AIPG Blockbook** are:
 
 -   index of addresses and address balances of the connected block chain
 -   fast index search
 -   simple blockchain explorer
 -   websocket, API and legacy Bitcore Insight compatible socket.io interfaces
 -   support of multiple coins (Bitcoin and Ethereum type) with easy extensibility to other coins
--   scripts for easy creation of debian packages for backend and blockbook
+-   scripts for easy creation of debian packages for backend and AIPG Blockbook
 
 ## Build and installation instructions
 
@@ -27,7 +27,7 @@ Contribution guide is [here](CONTRIBUTING.md).
 
 ## Implemented coins
 
-Blockbook currently supports over 30 coins. The Trezor team implemented
+AIPG Blockbook currently supports over 30 coins. The Trezor team implemented
 
 -   Bitcoin, Bitcoin Cash, Zcash, Dash, Litecoin, Bitcoin Gold, Ethereum, Ethereum Classic, Dogecoin, Namecoin, Vertcoin, DigiByte, Liquid
 
@@ -39,7 +39,7 @@ Testnets for some coins are also supported, for example:
 
 List of all implemented coins is in [the registry of ports](/docs/ports.md).
 
-## Common issues when running Blockbook or implementing additional coins
+## Common issues when running AIPG Blockbook or implementing additional coins
 
 #### Out of memory when doing initial synchronization
 
@@ -52,8 +52,8 @@ Please add your experience to this [issue](https://github.com/trezor/blockbook/i
 
 #### Error `internalState: database is in inconsistent state and cannot be used`
 
-Blockbook was killed during the initial import, most commonly by OOM killer.
-By default, Blockbook performs the initial import in bulk import mode, which for performance reasons does not store all data immediately to the database. If Blockbook is killed during this phase, the database is left in an inconsistent state.
+AIPG Blockbook was killed during the initial import, most commonly by OOM killer.
+By default, AIPG Blockbook performs the initial import in bulk import mode, which for performance reasons does not store all data immediately to the database. If AIPG Blockbook is killed during this phase, the database is left in an inconsistent state.
 
 See above how to reduce the memory footprint, delete the database files and run the import again.
 
@@ -61,7 +61,7 @@ Check [this](https://github.com/trezor/blockbook/issues/89) or [this](https://gi
 
 #### Running on Ubuntu
 
-[This issue](https://github.com/trezor/blockbook/issues/45) discusses how to run Blockbook on Ubuntu. If you have some additional experience with Blockbook on Ubuntu, please add it to [this issue](https://github.com/trezor/blockbook/issues/45).
+[This issue](https://github.com/trezor/blockbook/issues/45) discusses how to run AIPG Blockbook on Ubuntu. If you have some additional experience with AIPG Blockbook on Ubuntu, please add it to [this issue](https://github.com/trezor/blockbook/issues/45).
 
 #### My coin implementation is reporting parse errors when importing blockchain
 
@@ -69,8 +69,8 @@ Your coin's block/transaction data may not be compatible with `BitcoinParser` `P
 
 ## Data storage in RocksDB
 
-Blockbook stores data the key-value store RocksDB. Database format is described [here](/docs/rocksdb.md).
+AIPG Blockbook stores data the key-value store RocksDB. Database format is described [here](/docs/rocksdb.md).
 
 ## API
 
-Blockbook API is described [here](/docs/api.md).
+AIPG Blockbook API is described [here](/docs/api.md).
