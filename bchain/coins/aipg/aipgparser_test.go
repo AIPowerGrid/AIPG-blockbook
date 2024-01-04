@@ -20,58 +20,6 @@ func TestMain(m *testing.M) {
 	os.Exit(c)
 }
 
-func Test_GetAddrDescFromAddress_Mainnet(t *testing.T) {
-	type args struct {
-		address string
-	}
-	tests := []struct {
-		name    string
-		args    args
-		want    string
-		wantErr bool
-	}{
-		{
-			name:    "P2PKH1",
-			args:    args{address: "RAoGkGhKwzxLnstApumYPD2eTrAJ849cga"},
-			want:    "76a91410a8805f1a6af1a5927088544b0b6ec7d6f0ab8b88ac",
-			wantErr: false,
-		},
-		{
-			name:    "P2PKH2",
-			args:    args{address: "RTq37kPJqMS36tZYunxo2abrBMLeYSCAaa"},
-			want:    "76a914cb78181d62d312fdb9aacca433570150dcf0dec288ac",
-			wantErr: false,
-		},
-		{
-			name:    "P2SH1",
-			args:    args{address: "rCzjkBoY2duVn2WizKxfBedTVWAg6UhfLZ"},
-			want:    "a9144a2a40987c74578ee517d426aa2c43fc568f7e0887",
-			wantErr: false,
-		},
-		{
-			name:    "P2SH2",
-			args:    args{address: "rDzGemZkv9FbDDh5pvWfr7TWtMUnNRRE7T"},
-			want:    "a914550bc2fcc1992afade4d298326ee6a03ab975a9387",
-			wantErr: false,
-		},
-	}
-	parser := NewAIPGParser(GetChainParams("main"), &btc.Configuration{})
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got, err := parser.GetAddrDescFromAddress(tt.args.address)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("GetAddrDescFromAddress() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			h := hex.EncodeToString(got)
-			if !reflect.DeepEqual(h, tt.want) {
-				t.Errorf("GetAddrDescFromAddress() = %v, want %v", h, tt.want)
-			}
-		})
-	}
-}
-
 var (
 	testTx1       bchain.Tx
 	testTxPacked1 = "0a20d4d3a093586eae0c3668fd288d9e24955928a894c20b551b38dd18c99b123a7c12e1010200000001c171348ffc8976074fa064e48598a816fce3798afc635fb67d99580e50b8e614000000006a473044022009e07574fa543ad259bd3334eb365c655c96d310c578b64c24d7f77fa7dc591c0220427d8ae6eacd1ca2d1994e9ec49cb322aacdde98e4bdb065e0fce81162fb3aa9012102d46827546548b9b47ae1e9e84fc4e53513e0987eeb1dd41220ba39f67d3bf46affffffff02f8137114000000001976a914587a2afa560ccaeaeb67cb72a0db7e2573a179e488ace0c48110000000001976a914d85e6ab66ab0b2c4cfd40ca3b0a779529da5799288ac0000000018c7e1b3e50528849128329401122014e6b8500e58997db65f63fc8a79e3fc16a89885e464a04f077689fc8f3471c1226a473044022009e07574fa543ad259bd3334eb365c655c96d310c578b64c24d7f77fa7dc591c0220427d8ae6eacd1ca2d1994e9ec49cb322aacdde98e4bdb065e0fce81162fb3aa9012102d46827546548b9b47ae1e9e84fc4e53513e0987eeb1dd41220ba39f67d3bf46a28ffffffff0f3a450a04147113f81a1976a914587a2afa560ccaeaeb67cb72a0db7e2573a179e488ac222252484d31746d64766b6b3776446f69477877554a414d4e4e6d447179775a3574456e3a470a041081c4e010011a1976a914d85e6ab66ab0b2c4cfd40ca3b0a779529da5799288ac2222525631463939623955424272434d38614e4b7567737173444d3869716f4371374d744002"

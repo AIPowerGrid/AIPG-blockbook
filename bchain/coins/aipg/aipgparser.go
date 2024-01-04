@@ -51,6 +51,7 @@ func NewAIPGParser(params *chaincfg.Params, c *btc.Configuration) *AIPGParser {
 // GetChainParams contains network parameters
 func GetChainParams(chain string) *chaincfg.Params {
 	if !chaincfg.IsRegistered(&MainNetParams) {
+		chaincfg.ResetParams()
 		err := chaincfg.Register(&MainNetParams)
 		if err == nil {
 			err = chaincfg.Register(&TestNetParams)
