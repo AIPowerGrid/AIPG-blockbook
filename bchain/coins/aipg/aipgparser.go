@@ -25,13 +25,13 @@ func init() {
 	MainNetParams = chaincfg.MainNetParams
 	MainNetParams.Net = MainnetMagic
 	MainNetParams.PubKeyHashAddrID = []byte{23}
-	MainNetParams.ScriptHashAddrID = []byte{23}
+	MainNetParams.ScriptHashAddrID = []byte{33}
 
 //AIPG testnet Address encoding magics
 	TestNetParams = chaincfg.TestNet3Params
 	TestNetParams.Net = TestnetMagic
 	TestNetParams.PubKeyHashAddrID = []byte{23}
-	TestNetParams.ScriptHashAddrID = []byte{23}
+	TestNetParams.ScriptHashAddrID = []byte{33}
 }
 
 // AIPGParser handle
