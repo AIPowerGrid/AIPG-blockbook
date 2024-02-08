@@ -12,11 +12,11 @@
     "blockbook_public": 8159
   },
   "ipc": {
-    "rpc_url_template": "http://0.0.0.0:{{.Ports.BackendRPC}}",
+    "rpc_url_template": "http://127.0.0.1:{{.Ports.BackendRPC}}",
     "rpc_user": "rpc",
     "rpc_pass": "rpc",
     "rpc_timeout": 25,
-    "message_queue_binding_template": "tcp://0.0.0.0:{{.Ports.BackendMessageQueue}}"
+    "message_queue_binding_template": "tcp://127.0.0.1:{{.Ports.BackendMessageQueue}}"
   },
   "backend": {
     "package_name": "backend-aipg",
