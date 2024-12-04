@@ -22,10 +22,10 @@
     "package_name": "backend-aipg",
     "package_revision": "satoshilabs-1",
     "system_user": "aipg",
-    "version": "1.2.0",
-    "binary_url": "https://github.com/AIPowerGrid/AI-Power-Grid-Core/releases/download/v1.2.0/AI-Power-Grid-1.2.0-049c7f7-x86_64-linux-gnu.tar.gz",
+    "version": "1.3.0",
+    "binary_url": "https://github.com/AIPowerGrid/AI-Power-Grid-Core/releases/download/v1.3.0/AI-Power-Grid-1.3.0-x86_64-linux-gnu.tar.gz",
     "verification_type": "sha256",
-    "verification_source": "15a3e3bd45abbd4e1365e16995ea803f7b37911643c057bc535205d84a0f2e11",
+    "verification_source": "218a96cbeac434c629bb40a84bbb4d9e22145c61eebef8460e893a370b14fe75",
     "extract_command": "tar -C backend --strip 1 -xf",
     "exclude_files": [
       "bin/aipg-qt"
